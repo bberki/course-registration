@@ -1,5 +1,3 @@
-Tabii Buğra, işte bu Java projesi için uygun ve sade bir `README.md` dosyası örneği:
-
 ---
 
 ## 🎓 Ders Seçim Sistemi Simülasyonu (JAVACS)
