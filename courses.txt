@@ -1,0 +1,25 @@
+MAT101;Matematik I;5;true
+FIZ101;Fizik I;4;true
+KIM101;Kimya I;3;true
+BIO101;Biyoloji I;3;true
+TAR101;Tarih I;2;true
+FEL101;Felsefe I;2;true
+PSI101;Psikoloji I;3;false
+ING101;İngilizce I;4;true
+ALG101;Algoritma ve Programlama;5;true
+VER101;Veri Yapıları;5;true
+MAT102;Matematik II;5;true
+FIZ102;Fizik II;4;true
+KIM102;Kimya II;3;false
+BIO102;Biyoloji II;3;true
+TAR102;Tarih II;2;true
+FEL102;Felsefe II;2;true
+PSI102;Psikoloji II;3;true
+ING102;İngilizce II;4;true
+ALG102;Nesne Yönelimli Programlama;5;true
+VER102;Veritabanı Sistemleri;5;true
+MAT201;Lineer Cebir;5;true
+FIZ201;Modern Fizik;4;true
+KIM201;Organik Kimya;3;true
+BIO201;Genetik;3;false
+TAR201;Çağdaş Tarih;2;true
