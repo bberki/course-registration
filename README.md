@@ -80,6 +80,8 @@ javac *.java
 java Main
 ```
 
+Program grafik arayüzle açılacak ve rol seçimi penceresi karşınıza gelecektir.
+
 ---
 
 ### 👥 Geliştiriciler
