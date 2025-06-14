@@ -1,91 +1,78 @@
----
+# Course Registration System (JAVACS)
 
-## 🎓 Ders Seçim Sistemi Simülasyonu (JAVACS)
+This project is a simple course registration simulation written in Java. It provides a Swing based user interface with separate panels for **Student** and **Admin** roles.
 
-Bu proje, Java programlama dili kullanılarak geliştirilen basit bir **ders seçim sistemi simülasyonudur**. Proje, `Öğrenci` ve `Yönetici (Admin)` rollerini desteklemektedir ve kullanıcıların rolüne göre farklı işlemleri gerçekleştirmesine olanak tanır.
+## Project Structure
 
----
+- `Course.java` – represents a course (`code`, `name`, `credit`, `open` state)
+- `User.java` – abstract base class for users
+- `Student.java` – command line student implementation (still available)
+- `Admin.java` – command line admin implementation (still available)
+- `LessonCart.java` – manages a student's cart of courses
+- `CourseManager.java` – helper class for listing, adding and removing courses
+- `RoleSelectionFrame.java` – initial window to choose Student or Admin mode
+- `StudentPanel.java` – Swing panel for managing the student cart
+- `AdminPanel.java` – Swing panel for course management
+- `Main.java` – entry point that launches the GUI
+- `courses.txt` – list of courses loaded on startup
 
-### 📁 Proje Yapısı
+## Features
 
-* `Course.java`: Ders bilgilerini temsil eder (`kod`, `isim`, `kredi`, `açıklık durumu`).
-* `User.java`: Soyut kullanıcı sınıfı.
-* `Student.java`: Öğrenci rolü, `User` sınıfından türemiştir.
-* `Admin.java`: Yönetici rolü, `User` sınıfından türemiştir.
-* `LessonCart.java`: Öğrencinin ders sepetini temsil eder. Sadece `Course` türünden dersleri içerir.
-* `CourseManager.java`: Derslerin listelenmesi, eklenmesi ve silinmesini yöneten yardımcı sınıf.
-* `Main.java`: Programın çalıştığı ana sınıf.
-* `courses.txt`: Başlangıçta yüklenecek olan ders listesini içeren metin dosyası (opsiyonel, açıklama aşağıda).
+### Student
 
----
+- View all available courses
+- Add open courses to the cart (max total 30 credits)
+- Remove courses from the cart
+- Save the cart **once** (no further changes allowed)
 
-### 🔧 Özellikler
+### Admin
 
-#### Öğrenci:
+- Add new courses (code, name, credit, open/closed)
+- Remove existing courses
+- List all courses
 
-* Tüm dersleri görüntüleyebilir.
-* Ders sepetine ders ekleyebilir (sadece açık olanlar ve toplam 30 krediyi aşmadan).
-* Ders sepetinden ders çıkarabilir.
-* Ders sepetini görüntüleyebilir.
-* Ders sepetini **bir kez** kaydedebilir (sonrasında değişiklik yapılamaz).
+## Important Rules
 
-#### Yönetici:
+- The same course cannot be added more than once
+- Closed courses cannot be selected
+- Selections exceeding 30 credits are blocked
+- No changes to the cart after it is saved
+- Administrators cannot add a course that already exists
+- Attempts to remove a non-existent course result in an error
 
-* Yeni ders ekleyebilir (kod, isim, kredi, açık/kapalı bilgileriyle).
-* Mevcut dersi silebilir.
-* Tüm dersleri listeleyebilir.
+## `courses.txt` Support
 
----
-
-### 📝 Önemli Kurallar
-
-* Aynı ders birden fazla kez eklenemez.
-* Kapalı dersler seçilemez.
-* 30 krediyi geçen seçimler engellenir.
-* Sepet kaydedildikten sonra ekleme/silme işlemi yapılamaz.
-* Yönetici var olan bir dersi tekrar ekleyemez.
-* Silinmek istenen ders mevcut değilse hata verilir.
-* Geçersiz seçimlerde kullanıcı bilgilendirilir.
-
----
-
-### 📥 `courses.txt` Desteği (Opsiyonel)
-
-Sistem gelecekte `courses.txt` adında bir dosyadan dersleri okuyarak başlatılabilir. Bu özellik henüz eklenmemiştir ancak planlanmaktadır.
-
-📌 **Beklenen format örneği:**
+Courses are automatically loaded from `courses.txt` when the application starts. The file must contain lines in the following format:
 
 ```
-CSE101,Programlamaya Giriş,6,true
-MAT102,Lineer Cebir,5,true
-FIZ103,Fizik I,5,false
+CODE;Name;Credit;open
 ```
 
-> Her satır: `DersKodu,DersAdı,Kredi,AçıkMı`
+Example:
 
----
+```
+CSE101;Introduction to Programming;6;true
+MAT102;Linear Algebra;5;true
+FIZ103;Physics I;5;false
+```
 
-### ▶️ Çalıştırma
+## Running the Program
 
-1. Tüm `.java` dosyalarını bir dizine yerleştirin.
-2. Konsoldan derleyin:
+1. Place all `.java` files in the same directory.
+2. Compile them:
 
 ```bash
 javac *.java
 ```
 
-3. Programı çalıştırın:
+3. Run the application:
 
 ```bash
 java Main
 ```
 
-Program grafik arayüzle açılacak ve rol seçimi penceresi karşınıza gelecektir.
+A GUI window will open with role selection followed by the corresponding panel.
 
----
+## Authors
 
-### 👥 Geliştiriciler
-
-* **Buğra Berk İnci**
-
----
+- **Buğra Berk İnci**
